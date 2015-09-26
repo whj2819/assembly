@@ -1,0 +1,3 @@
+assemble resources:
+
+http://asm.sourceforge.net/resources.html
