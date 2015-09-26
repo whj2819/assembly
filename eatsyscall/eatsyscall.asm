@@ -8,7 +8,7 @@
 ; 使用这些命令生成:
 ; nasm -f elf -g -F stabs eatsyscall.asm
 ; 32位:ld -o eatsyscall eatsyscall.o
-; 64位:ld -m elf_i386-o eatsyscall eatsyscall.o
+; 64位:ld -m elf_i386 -o eatsyscall eatsyscall.o
 ;
 
 SECTION .data                          ; 包含已经初始化的数据的段
