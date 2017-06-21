@@ -6,7 +6,7 @@
 
 
 section .bss
-    Buff resb 1
+    Buff resb 1 ; nasm 伪指令:声明未初始化的数据. 保留1字节.
 
 section .data
 
@@ -26,13 +26,16 @@ Read:
     int 80h                 ; 调用sys_read 系统调用
     cmp eax,0
     je Exit                 ; 如果为EOF,则跳转到Exit.
+							; jump near if equal(zf = 1)
 
     cmp byte [Buff],61h     ; 将输入的字符与小写字母'a'比较
     jb Write                ; 如果在ASCII表中比'a'小, 则不是小写字符.
+							; jump short if below (cf = 1)
 
     cmp byte [Buff],7Ah     ; 将输入的字符与小写字母'z'比较
     ja Write                ; 如果在ASCII表中比'z'大, 则不是小写字符
                             ; 此时,我们已经拥有了一个小写字符.
+							; jump short if above(cf = 0 and zf = 0)
 
     sub byte [Buff],20h     ; 从小写字符中减去 20h, 得出相应的大写字符......
                             ; ......然后将该字符写出到标准输出.

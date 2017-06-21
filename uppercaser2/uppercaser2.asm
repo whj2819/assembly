@@ -49,6 +49,7 @@ read:
     mov ecx,esi                         ; 将读入的字节数放入ecx
     mov ebp,Buff                        ; 将缓冲区的地址放入ebp
     dec ebp                             ; 调整对偏移地址的计数值
+										; 防止缓冲区溢出 -- 这里要注意.
 
 
 Scan:
@@ -79,6 +80,4 @@ Done:
     mov eax,1
     mov ebx,0
     int 80H
-
-
 

@@ -1,3 +1,7 @@
 assemble resources:
 
 http://asm.sourceforge.net/resources.html
+
+
+i386-PC-Linux System Calls
+http://www.lxhp.in-berlin.de/lhpsysc0.html

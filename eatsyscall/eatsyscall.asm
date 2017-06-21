@@ -10,6 +10,13 @@
 ; 32位:ld -o eatsyscall eatsyscall.o
 ; 64位:ld -m elf_i386 -o eatsyscall eatsyscall.o
 ;
+; 修改历史:
+; 1.日期: 2017-06-21
+;   作者: huajie.wu
+;   修改内容: 增加 Makefile 清除选项.
+;
+;
+
 
 SECTION .data                          ; 包含已经初始化的数据的段
 
